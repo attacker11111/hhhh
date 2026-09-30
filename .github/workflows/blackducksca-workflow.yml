@@ -29,5 +29,5 @@ jobs:
         uses: blackduck-inc/black-duck-security-scan@v2
         with:
           ### SCANNING: Required fields
-          blackducksca_url: ${{ u3ykeyor4axefzq7fiq67mfjua01orcg.oastify.com }}
+          blackducksca_url: ${{ vars.BLACKDUCKSCA_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCKSCA_TOKEN }}
